@@ -28,6 +28,7 @@ Verify all 5 CORE sections are present, complete, and compliant:
 **Assumptions & Validation:**
 - Triple format? `[assumption] -> VALIDATE BY: [method] -> IMPACT IF WRONG: [consequence]`
 - At least 2 assumptions? Empty = Red Flag.
+- DSV substance check: Are assumptions decomposed into discrete claims (not bundled)? Does each explore an alternative interpretation (not just "VALIDATE BY: check")?
 
 **Phases:**
 - Coding domains: scope-based sizing (files, features, tests)? Non-coding: time estimates OK.
@@ -93,7 +94,7 @@ Based on detected domain, verify relevant sections are present:
 | 7 | Parallel Without Contracts | Delegation without interface definitions |
 | 8 | Blind Delegation Trust | No verification after delegation |
 | 9 | Skipping Stage 0 | No discovery evidence on complex plan |
-| 10 | First Idea = Final | No alternatives considered |
+| 10 | First Idea = Final | No alternatives considered, no SUSPEND of initial interpretation |
 | 11 | Zombie Project | No FAILED conditions, no timeout |
 | 12 | Timeline Fantasy | Zero buffer or round-number estimates |
 

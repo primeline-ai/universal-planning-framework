@@ -1,7 +1,7 @@
 # Universal Planning Framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.1-green.svg)]()
+[![Version](https://img.shields.io/badge/version-1.2-green.svg)]()
 [![Works with Claude Code](https://img.shields.io/badge/works%20with-Claude%20Code-orange.svg)]()
 
 **Plans fail because discovery happens too late.** This framework catches gaps that only surface during execution - evolved from 117 real plans + 195 handoffs.
@@ -55,7 +55,7 @@ Claude runs through 3 stages:
 ```bash
 /interview-plan path/to/plan.md
 ```
-Framework-aware questions across 3 tiers: critical gaps, domain-specific probes, quality strengthening. References anti-patterns by number.
+Framework-aware questions across 3 tiers: critical gaps, domain-specific probes, quality strengthening. Includes DSV checks for premature commitment and assumption mutation. References anti-patterns by number.
 
 ### 3. Review plan quality
 ```bash
@@ -73,7 +73,7 @@ Objective assessment against the rubric. Returns grade, anti-patterns found, and
 
 ### Stage 0: Discovery (Before Planning)
 
-12 checks in 3 priority tiers. The agent decides which to run based on context.
+12 checks in 3 priority tiers. The agent decides which to run based on context. Formalizes the DSV principle (Decompose-Suspend-Validate): checks 0.1-0.6 decompose, 0.7-0.12 suspend assumptions, Assumptions & Validation validates each claim.
 
 | Tier | Checks |
 |------|--------|

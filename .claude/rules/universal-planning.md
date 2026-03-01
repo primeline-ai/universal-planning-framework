@@ -1,7 +1,7 @@
 # Universal Planning Framework
 
 **Source:** Evolved from analysis of 117 plans + 195 handoffs in the Evolving system
-**Version:** 1.1
+**Version:** 1.2
 **Category:** planning, validation, meta-cognition
 **Tags:** planning, framework, universal, discovery, sparring, quality
 
@@ -16,6 +16,8 @@ Critical insights are consistently found AFTER initial planning - during intervi
 ### Stage 0: Before Plan (Discovery & Sparring)
 
 Runs BEFORE writing a single line of the plan. Not a rigid checklist - a thinking toolkit.
+
+**Formalization:** Stage 0 operationalizes the DSV principle (Decompose-Suspend-Validate): checks 0.1-0.6 decompose the problem space, checks 0.7-0.12 suspend assumptions through adversarial sparring, and Stage 1's Assumptions & Validation section validates each claim independently. The compressed version - Quick DSV - is 3 questions in 30 seconds: (1) "What are the 2-3 key claims?" (2) "What alternative interpretation haven't I considered?" (3) "Which claim am I least sure about?"
 
 **Intelligence rule:** The agent decides which checks to run based on context. Skipping a check is fine IF the agent can articulate WHY. Running all 12 on a trivial task wastes time. Running zero on a complex task creates blind spots.
 
@@ -66,6 +68,7 @@ Runs BEFORE writing a single line of the plan. Not a rigid checklist - a thinkin
 1. **Context & Why** - Why this exists, what problem it solves. Max 3 sentences. NOT "improve X" but WHY improve X.
 2. **Success Criteria** - Measurable outcomes, not activities. Includes NOT-scope and FAILED conditions (kill criteria + timeout). Red flag: if you can't write a FAILED condition, criteria are too vague.
 3. **Assumptions & Validation** - What we're betting on being true. Format: `[assumption] -> VALIDATE BY: [method] -> IMPACT IF WRONG: [consequence]`. Stage 0 = approach-level, this = implementation-level. Red flag: empty section means not thinking hard enough.
+   This format operationalizes DSV: decompose into discrete claims, suspend (explore what breaks if wrong), validate each independently.
 4. **Phases** - Ordered stages with dependencies and binary gates. Gate rules: PASS or FAIL only. Must be verifiable. If gate fails - STOP, fix or replan. Bad gate: "Code is written." Good gate: "3 endpoints return valid JSON under test suite."
 5. **Verification** - How to prove it worked. Split into three sub-sections:
    - **Automated** (point-in-time): Tests, CI, linters - proves "it works at ship time"
@@ -317,6 +320,7 @@ STAGE 0 (Before) - 12 Checks:
   Maybe:   0.4 Updates | 0.5 Practices | 0.6 Research | 0.10 Competitive
            0.11 Constraints | 0.12 People Risk
   Skip:    <3 phases AND <2h AND reversible | user says skip | continuation -> "what changed?"
+  Formalization: DSV (Decompose-Suspend-Validate). Quick DSV = 3 questions, 30 seconds.
 
 STAGE 1 (Plan):
   End State: 1 paragraph, concrete outcome

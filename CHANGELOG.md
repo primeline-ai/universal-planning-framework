@@ -2,6 +2,16 @@
 
 All notable changes to the Universal Planning Framework are documented here.
 
+## [1.2.0] - 2026-03-01
+
+### Added
+- **DSV formalization** in Stage 0 introduction - explicit connection to Decompose-Suspend-Validate principle with inline Quick DSV (3 questions, 30 seconds)
+- DSV vocabulary in Assumptions & Validation section
+- DSV reference in Quick Reference
+- **3 DSV interview questions** in `/interview-plan` (SUSPEND, PRIORITIZE, MUTATED checks)
+- **2 DSV substance checks** in `/plan-review` Assumptions assessment
+- **DSV step** in planner agent assessment process
+
 ## [1.1.0] - 2026-02-21
 
 ### Added

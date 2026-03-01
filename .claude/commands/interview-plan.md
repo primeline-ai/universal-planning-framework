@@ -43,6 +43,7 @@ Questions about missing or weak CORE sections. These block implementation.
 | No rollback on irreversible change | "If Phase [N] breaks production, what's the undo plan? How long does rollback take?" |
 | Missing VALIDATE BY | "Assumption [X] has no validation method. How would you test this cheaply before committing?" |
 | Assumed facts (#21) | "You state [X] as fact - is this verified or an assumption? What's the source?" |
+| Premature commitment | "For assumption [X], what alternative interpretation haven't you considered? Could [X] mean something different than you think?" |
 
 ### Tier 2: Domain-Specific Probes (ask second)
 
@@ -60,6 +61,8 @@ Questions triggered by the detected domain:
 
 **Research:** "What constitutes a valid null result?" | "Where are findings captured for future reference?" | "What's the time-boxed FAILED condition?"
 
+**All domains (DSV):** "Which assumption, if wrong, would invalidate the most other assumptions? Validate that one first."
+
 ### Tier 3: Quality Strengthening (ask last)
 
 Questions that push a plan from Grade B toward Grade A:
@@ -71,6 +74,7 @@ Questions that push a plan from Grade B toward Grade A:
 - "What did Stage 0 discover that ISN'T reflected in the plan?" (Discovery Consolidation, anti-pattern #20)
 - "Are there numbers in this plan without sources?" (anti-pattern #15)
 - "Any gates that use judgment words like 'acceptable', 'sufficient', 'ready'?" (anti-pattern #18)
+- "Has any assumption mutated during this interview - has the question itself changed?" (DSV MUTATED state - when validation reveals the claim was the wrong question)
 
 ---
 
@@ -90,6 +94,7 @@ When a question reveals an issue, reference the specific anti-pattern:
 | Judgment words in gates | #18 Unverifiable Gates |
 | Discovery findings missing from plan | #20 Discovery Amnesia |
 | Delegation without input spec | #17 Delegation Without Context |
+| Question itself was wrong | #10 First Idea = Final (DSV: MUTATED claim) |
 
 ---
 

@@ -43,6 +43,7 @@ Use the Read tool to load the plan file.
 **Success Criteria:** Measurable outcomes? NOT-scope defined? **FAILED conditions present?** (missing = Red Flag)
 
 **Assumptions:** At least 2? **Triple format?** `[assumption] -> VALIDATE BY -> IMPACT IF WRONG` (missing parts = anti-pattern #1)
+- DSV substance: Are assumptions discrete claims with alternative interpretations explored? (Format compliance ≠ substance quality)
 
 **Phases:** Scope-based sizing (coding) or time estimates (non-coding)? **Binary gates?** (vague = flag with fix). **Review Checkpoints?** (every 2 phases for coding, per milestone for non-coding)
 
