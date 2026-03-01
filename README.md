@@ -26,6 +26,8 @@ curl -o .claude/rules/universal-planning.md \
 
 ## What Makes This Different
 
+**Formal reasoning foundation (DSV).** Most plans fail not because validation is missing, but because the wrong question gets validated. The framework is built on Decompose-Suspend-Validate - a principle that forces you to challenge your interpretation before committing to it. [See Theoretical Foundation below.](#theoretical-foundation-dsv)
+
 **FAILED conditions are mandatory.** Every plan must define when to kill the project - not just when it succeeds. No FAILED condition = zombie project (anti-pattern #11).
 
 **21 anti-patterns with detection rules.** Not guidelines - specific detection rules that catch vague gates ("looks good"), hallucinated estimates, assumed facts, discovery amnesia, and 17 more. Categorized as 12 Core + 5 AI-Specific + 4 Quality.
@@ -55,7 +57,7 @@ Claude runs through 3 stages:
 ```bash
 /interview-plan path/to/plan.md
 ```
-Framework-aware questions across 3 tiers: critical gaps, domain-specific probes, quality strengthening. Includes DSV checks for premature commitment and assumption mutation. References anti-patterns by number.
+Framework-aware questions across 3 tiers: critical gaps, domain-specific probes, quality strengthening. Includes [DSV checks](#theoretical-foundation-dsv) for premature commitment and assumption mutation. References anti-patterns by number.
 
 ### 3. Review plan quality
 ```bash
@@ -69,11 +71,35 @@ Objective assessment against the rubric. Returns grade, anti-patterns found, and
 ```
 6 perspectives stress-test the plan. Fixes structural issues, flags strategic decisions for you.
 
+## Theoretical Foundation: DSV
+
+The framework is built on **Decompose-Suspend-Validate** (DSV) - a reasoning principle that prevents premature commitment at every stage of planning.
+
+Most planning failures share a root cause: the planner validates an assumption without first questioning whether it's the right assumption. You check "Can we build X in 4 weeks?" when the real question is "Should we build X at all?" DSV prevents this by structuring thought into three phases:
+
+| Phase | What it does | Framework mapping |
+|-------|-------------|-------------------|
+| **Decompose** | Break the problem into discrete, testable claims | Stage 0 checks 0.1-0.6 (Existing Work, Facts, Docs, Updates, Practices, Research) |
+| **Suspend** | Challenge each claim - explore alternative interpretations before committing | Stage 0 checks 0.7-0.12 (Feasibility, ROI, AHA Effect, Competitive, Constraints, People Risk) |
+| **Validate** | Test each claim independently with explicit methods and failure impacts | Stage 1 Assumptions section (`VALIDATE BY` + `IMPACT IF WRONG`) |
+
+The key insight is **Suspend**. Decomposing is natural. Validating is expected. But actively suspending your first interpretation - asking "what if this means something entirely different?" - is what most planners skip. That's why Stage 0's sparring checks (0.7-0.12) exist.
+
+### Quick DSV (3 questions, 30 seconds)
+
+For time-pressured situations, DSV compresses to three questions:
+
+1. **"What are the 2-3 key claims?"** (Decompose)
+2. **"What alternative interpretation haven't I considered?"** (Suspend)
+3. **"Which claim am I least sure about?"** (Validate that one first)
+
+This works standalone - even without the full framework. Use it before any decision where you catch yourself feeling "obvious."
+
 ## The Framework
 
 ### Stage 0: Discovery (Before Planning)
 
-12 checks in 3 priority tiers. The agent decides which to run based on context. Formalizes the DSV principle (Decompose-Suspend-Validate): checks 0.1-0.6 decompose, 0.7-0.12 suspend assumptions, Assumptions & Validation validates each claim.
+12 checks in 3 priority tiers. The agent decides which to run based on context. Maps directly to the [DSV phases above](#theoretical-foundation-dsv): checks 0.1-0.6 decompose, 0.7-0.12 suspend, Stage 1 Assumptions validates.
 
 | Tier | Checks |
 |------|--------|
@@ -148,6 +174,8 @@ Traditional planning: Goal - Approach - Steps - Execute - "Oh crap, we didn't co
 This framework inverts it: **Discovery - Constraints - Assumptions - THEN plan.**
 
 Stage 0 is where you find out your "simple feature" touches 6 systems, the existing code does 70% of what you need, your timeline was off by 3x, and there's a legal requirement you didn't know about.
+
+The [DSV principle](#theoretical-foundation-dsv) explains why this works: most "overlooked" requirements weren't missing from the problem space - they were missing from the planner's interpretation of it. By forcing decomposition and suspension before validation, the framework catches gaps at the cheapest possible moment: before a single line of the plan is written.
 
 The framework is domain-agnostic. Use it for software features, business launches, content creation, data pipelines, research projects - anything that needs a plan.
 
