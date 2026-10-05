@@ -7,6 +7,8 @@
 
 ![universal-planning-framework](assets/hero.png)
 
+https://github.com/user-attachments/assets/6358ef3b-24e5-4b19-9c0e-bcce22a234ee
+
 **Plans fail because discovery happens too late.** This framework catches gaps that only surface during execution - evolved from 117 real plans + 195 handoffs.
 
 > "Initial idea was a custom booking system (8 weeks). Stage 0 discovered Calendly + Stripe does 90% of it. Shipped in 3 weeks, saved 5 weeks of engineering."
